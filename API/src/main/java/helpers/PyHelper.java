@@ -2,13 +2,17 @@ package helpers;
 
 import java.io.IOException;
 
+import javax.annotation.Resource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class PyHelper {
 	
+	@Resource(name="pyFile")
 	public String pyFile;
+	
     public String request;
     
     @Autowired

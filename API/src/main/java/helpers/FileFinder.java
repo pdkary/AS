@@ -5,6 +5,8 @@ import java.io.FileNotFoundException;
 import java.io.FilenameFilter;
 import java.util.ArrayList;
 
+import javax.annotation.Resource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -14,14 +16,13 @@ import objects.Path;
 
 @Component
 public class FileFinder {
-	
     public String homeDirectory;
+	
 	public ArrayList<Path> files;
     public String parent;
     public String keyword;
     public String[] keywords;
 	
-    @Autowired
 	public FileFinder(String homeDirectory) {
     	this.homeDirectory = homeDirectory;
     	this.files = new ArrayList<Path>();

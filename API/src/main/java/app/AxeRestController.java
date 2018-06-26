@@ -2,6 +2,7 @@ package app;
 import java.io.IOException;
 import java.util.Optional;
 
+import javax.annotation.Resource;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,12 +22,15 @@ import objects.Path;
 @RestController
 public class AxeRestController {
 	
-	public String homeDirectory = "C:\\Users\\pdkar\\Videos\\Torrents";
-    public String pyFile = "C:\\Users\\pdkar\\Documents\\Programming\\Python\\SparrowCL.py";
-    
-    public PyHelper pyHelper = new PyHelper(pyFile);
-	public CastNow castNow = new CastNow();
-	public FileFinder fileFinder = new FileFinder(homeDirectory);
+	@Resource(name="homeDirectory")
+	public String homeDirectory;
+	
+    @Autowired
+    public PyHelper pyHelper;
+    @Autowired
+	public CastNow castNow;
+    //@Autowired
+	public FileFinder fileFinder;
 	
 	public String latestCall;
 	
