@@ -22,16 +22,15 @@ import objects.Path;
 @RestController
 public class AxeRestController {
 	
-	@Resource(name="homeDirectory")
+	//@Resource(name="homeDirectory")
 	public String homeDirectory;
 	
-    @Autowired
+	@Autowired
     public PyHelper pyHelper;
     
-    @Autowired
 	public CastNow castNow;
     
-	public FileFinder fileFinder = new FileFinder(homeDirectory);
+	public FileFinder fileFinder;
 	
 	public String latestCall;
 	
