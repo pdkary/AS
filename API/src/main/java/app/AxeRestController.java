@@ -1,4 +1,5 @@
 package app;
+
 import java.io.IOException;
 import java.util.Optional;
 
@@ -18,7 +19,6 @@ import helpers.PyHelper;
 import objects.AxeRequestDto;
 import objects.Path;
 
-
 @RestController
 public class AxeRestController {
 	
@@ -27,10 +27,11 @@ public class AxeRestController {
 	
     @Autowired
     public PyHelper pyHelper;
+    
     @Autowired
 	public CastNow castNow;
-    //@Autowired
-	public FileFinder fileFinder;
+    
+	public FileFinder fileFinder = new FileFinder(homeDirectory);
 	
 	public String latestCall;
 	

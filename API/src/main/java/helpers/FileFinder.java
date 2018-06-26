@@ -5,16 +5,11 @@ import java.io.FileNotFoundException;
 import java.io.FilenameFilter;
 import java.util.ArrayList;
 
-import javax.annotation.Resource;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import objects.Path;
 
-
-
-@Component
+@Service
 public class FileFinder {
     public String homeDirectory;
 	
