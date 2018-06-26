@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: pdkar
+Build-Jdk: 10.0.1
+Implementation-Title: API
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: AxeServer
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/API
+Created-By: Maven Integration for Eclipse
+
