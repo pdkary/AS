@@ -3,10 +3,10 @@ package app;
 import java.io.IOException;
 import java.util.Optional;
 
-import javax.annotation.Resource;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,19 +22,20 @@ import objects.Path;
 @RestController
 public class AxeRestController {
 	
-	//@Resource(name="homeDirectory")
-	public String homeDirectory;
-	
-	@Autowired
     public PyHelper pyHelper;
-    
-	public CastNow castNow;
-    
-	public FileFinder fileFinder;
+	public CastNow caster;
+	public FileFinder fileHelper;
 	
 	public String latestCall;
+	public String homeDirectory = fileHelper.homeDirectory;
 	
-    
+	@Autowired
+	public AxeRestController(PyHelper pyHelper, CastNow caster, FileFinder fileHelper) {
+		this.pyHelper = pyHelper;
+		this.caster = caster;
+		this.fileHelper = fileHelper;
+	}
+
 	@RequestMapping(value="/Axe",method=RequestMethod.GET)
 	public String Ace(){
 		return "on";
@@ -56,7 +57,7 @@ public class AxeRestController {
     @RequestMapping(value="/File",method=RequestMethod.POST)
 	public void castFile(@Valid @RequestBody AxeRequestDto payload) throws IOException {
 		System.out.println("Recieved: "+payload.name);
-		Path path = fileFinder.search(this.homeDirectory,payload.name).specify();
+		Path path = fileHelper.search(this.homeDirectory,payload.name).specify();
 		System.out.println(homeDirectory+"\\"+path.getPath()+"\\"+path.getName());
 		//castNow.cast(path.getPath());
 	}

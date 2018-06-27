@@ -2,9 +2,9 @@ package helpers;
 
 import java.io.IOException;
 
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-@Service
+@Component
 public class CastNow {
     public static void cast(String filename) throws IOException {
         try {
