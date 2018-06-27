@@ -7,14 +7,25 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class PyHelper {
-
+	
+	@Autowired
 	public String pyFile;
 
 	public String request;
 
-	@Autowired
-	public PyHelper(String pyFile, String request) {
+	public String getPyFile() {
+		return pyFile;
+	}
+
+	public void setPyFile(String pyFile) {
 		this.pyFile = pyFile;
+	}
+
+	public String getRequest() {
+		return request;
+	}
+
+	public void setRequest(String request) {
 		this.request = request;
 	}
 

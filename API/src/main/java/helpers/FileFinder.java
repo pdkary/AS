@@ -12,6 +12,8 @@ import objects.Path;
 
 @Component
 public class FileFinder {
+	
+	@Autowired
     public String homeDirectory;
 	
 	public ArrayList<Path> files;
@@ -19,11 +21,6 @@ public class FileFinder {
     public String keyword;
     public String[] keywords;
 	
-    @Autowired
-	public FileFinder(String homeDirectory) {
-    	this.homeDirectory = homeDirectory;
-    	this.files = new ArrayList<Path>();
-    }
 	
     FilenameFilter filter = new FilenameFilter() {
         public boolean accept(File dir, String name) {
