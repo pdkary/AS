@@ -1,6 +1,9 @@
 package app;
 
+import java.io.IOException;
 import java.util.Optional;
+
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -14,6 +17,7 @@ import helpers.CastNow;
 import helpers.FileFinder;
 import helpers.PyHelper;
 import objects.AxeRequestDto;
+import objects.Path;
 
 @RestController
 public class AxeRestController {
@@ -51,11 +55,11 @@ public class AxeRestController {
 		}
 	}
     
-//    @RequestMapping(value="/File",method=RequestMethod.POST)
-//	public void castFile(@Valid @RequestBody AxeRequestDto payload) throws IOException {
-//		System.out.println("Recieved: "+payload.name);
-//		Path path = fileFinder.search(this.homeDirectory,payload.name).specify();
-//		System.out.println(homeDirectory+"\\"+path.getPath()+"\\"+path.getName());
-//		//castNow.cast(path.getPath());
-//	}
+    @RequestMapping(value="/File",method=RequestMethod.POST)
+	public void castFile(@Valid @RequestBody AxeRequestDto payload) throws IOException {
+		System.out.println("Recieved: "+payload.name);
+		Path path = fileFinder.search(this.homeDirectory,payload.name).specify();
+		System.out.println(homeDirectory+"\\"+path.getPath()+"\\"+path.getName());
+		//castNow.cast(path.getPath());
+	}
 }
