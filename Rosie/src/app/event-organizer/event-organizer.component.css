@@ -1,0 +1,16 @@
+.container {
+    display: inline-block;
+    width: 10em;
+    height: 10em;
+    padding: 5px;
+    margin: 10px;
+    background-color: rgb(224, 240, 253);
+}
+.container * {
+    margin-left: 15px;
+}
+.container button {
+    margin:0;
+    width:100%;
+    background-color: rgb(200, 220, 236);
+}

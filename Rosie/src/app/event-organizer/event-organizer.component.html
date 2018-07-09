@@ -1,0 +1,8 @@
+<div class="page">
+  <div *ngFor="let event of events" class="container">
+    <h3>{{event.title}}</h3>
+    <p>{{event.time}}</p>
+    <p>{{event.creator}}</p>
+    <button mat-button color="primary">RSVP</button>
+  </div>
+</div>
