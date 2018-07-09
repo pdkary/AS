@@ -11,7 +11,14 @@ import helpers.FileFinder;
 import helpers.PyHelper;
 
 @SpringBootApplication
-@ComponentScan(basePackageClasses = { PyHelper.class, FileConfig.class, CastNow.class, FileFinder.class,AxeRestController.class })
+@ComponentScan(basePackageClasses = { 
+		PyHelper.class, 
+		FileConfig.class, 
+		CastNow.class, 
+		FileFinder.class,
+		AxeRestController.class 
+		}
+)
 public class ApiApplication {
 
 	public static void main(String[] args) {
@@ -19,5 +26,6 @@ public class ApiApplication {
 
 		AxeRestController axe = ctx.getBean(AxeRestController.class);
 		System.out.println(axe.pyHelper.pyFile);
+		System.out.println(axe.fileFinder.homeDirectory);
 	}
 }
